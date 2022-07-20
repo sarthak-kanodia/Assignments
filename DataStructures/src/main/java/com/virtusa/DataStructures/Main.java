@@ -19,6 +19,8 @@ public class Main
     	System.out.println("Pop: "+stack1.pop());
     	System.out.println("Min: "+stack1.getMin());
     	System.out.println("Top: "+stack1.top());
+    	
+//    	Checking New Branch dev
     	  	    	        
     }
 }
