@@ -58,9 +58,21 @@ public class MinStack {
 		}
 	}
 	
-	
-	
-	
-	
-	
+	public int getMin() {
+		if(isEmpty()) {
+			throw new EmptyStackException();
+		}
+		else {
+			int min = headStack.getData();
+			Node tempNode = headStack;
+			while(tempNode!=null) {
+				if(tempNode.getData()<min) {
+					min = tempNode.getData();
+				}
+				tempNode = tempNode.getNext();
+			}
+			return min;
+		}
+	}
+		
 }
