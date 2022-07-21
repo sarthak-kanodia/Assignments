@@ -59,7 +59,7 @@ public class MinStackTest
         stack1.push(10);
         stack1.push(20);
         stack1.push(30);
-        assertEquals(30, stack1.top());
+        assertEquals(30, stack1.pop());
     }
     
     @Test
