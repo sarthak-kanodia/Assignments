@@ -33,6 +33,15 @@ public class MinStackMockTest
     }
     
     @Test
+    public void push_IncreaseSize_IfElementIsPushed() {
+    	stack1 = spy(MinStack.class);
+//    	assertEquals(0, stack1.size());
+    	stack1.push(10);
+    	stack1.push(20);
+    	assertEquals(2, stack1.size());
+    }
+    
+    @Test
     public void top_ReturnsLastElement_StackContainsElement()
     {    	
     	stack1 = spy(MinStack.class);
