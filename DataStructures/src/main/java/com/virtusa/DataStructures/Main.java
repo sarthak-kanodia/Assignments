@@ -6,7 +6,7 @@ public class Main
     {
         
     	MinStack stack1 = new MinStack();
-    	    	
+    	   	    	
     	stack1.push(50);    	  	
     	stack1.push(30);    	
     	stack1.push(20);
