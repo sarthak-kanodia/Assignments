@@ -71,5 +71,5 @@ public class MinStackTest
         stack1.push(30);
         assertEquals(10, stack1.getMin());
     }
-//    Hello This is a temporary commit need to remove after this.
+
 }
