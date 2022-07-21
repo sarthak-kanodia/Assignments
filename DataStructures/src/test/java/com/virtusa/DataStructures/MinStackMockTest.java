@@ -1,7 +1,9 @@
 package com.virtusa.DataStructures;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.when;
 
 import java.util.EmptyStackException;
 
@@ -10,6 +12,30 @@ import org.junit.Test;
 public class MinStackMockTest 
 {
 	MinStack stack1;
+	
+	@Test
+	public void top_ReturnsMockElement_Test()
+	{    	
+		stack1 = mock(MinStack.class);
+		when(stack1.top()).thenReturn(200);
+		assertEquals(200, stack1.top());
+	}	
+	
+	@Test
+    public void pop_ReturnsMockElement_Test()
+    {    	
+    	stack1 = mock(MinStack.class);
+    	when(stack1.pop()).thenReturn(100);
+        assertEquals(100, stack1.pop());
+    }
+	
+	@Test
+	public void min_ReturnsMockElement_Test()
+	{    	
+		stack1 = mock(MinStack.class);
+		when(stack1.getMin()).thenReturn(5);
+		assertEquals(5, stack1.getMin());
+	}
 	
     @Test(expected = EmptyStackException.class)
     public void top_ThrowsAnException_StackIsEmpty()
@@ -31,7 +57,7 @@ public class MinStackMockTest
     	stack1 = spy(MinStack.class);
         stack1.getMin();
     }
-    
+        
     @Test
     public void push_IncreaseSize_IfElementIsPushed() {
     	stack1 = spy(MinStack.class);
@@ -41,6 +67,7 @@ public class MinStackMockTest
     	assertEquals(2, stack1.size());
     }
     
+        
     @Test
     public void top_ReturnsLastElement_StackContainsElement()
     {    	
@@ -52,6 +79,7 @@ public class MinStackMockTest
         
         assertEquals(20, stack1.top());
     }
+    
     
     @Test
     public void pop_ReturnsLastElement_StackContainsElement()
