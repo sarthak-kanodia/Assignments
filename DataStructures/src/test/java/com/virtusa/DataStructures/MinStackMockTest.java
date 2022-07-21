@@ -61,13 +61,12 @@ public class MinStackMockTest
     @Test
     public void push_IncreaseSize_IfElementIsPushed() {
     	stack1 = spy(MinStack.class);
-//    	assertEquals(0, stack1.size());
+    	assertEquals(0, stack1.size());
     	stack1.push(10);
     	stack1.push(20);
     	assertEquals(2, stack1.size());
     }
-    
-        
+          
     @Test
     public void top_ReturnsLastElement_StackContainsElement()
     {    	
@@ -80,7 +79,6 @@ public class MinStackMockTest
         assertEquals(20, stack1.top());
     }
     
-    
     @Test
     public void pop_ReturnsLastElement_StackContainsElement()
     {    	
@@ -90,8 +88,7 @@ public class MinStackMockTest
         stack1.push(30);
         assertEquals(30, stack1.top());
     }
-    
- 
+     
     @Test
     public void getMin_MinElement_StackContainsElements()
     {    	

@@ -30,8 +30,7 @@ public class MinStackTest
         stack1 = new MinStack();
         stack1.getMin();
     }
-    
-    
+        
     @Test
     public void push_IncreaseSize_IfElementIsPushed() {
     	stack1 = new MinStack();
@@ -63,7 +62,6 @@ public class MinStackTest
         assertEquals(30, stack1.top());
     }
     
- 
     @Test
     public void getMin_MinElement_StackContainsElements()
     {    	
