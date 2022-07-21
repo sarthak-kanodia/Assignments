@@ -6,7 +6,7 @@ public class Main
     {
         
     	MinStack stack1 = new MinStack();
-    	    	
+    	   	    	
     	stack1.push(50);    	  	
     	stack1.push(30);    	
     	stack1.push(20);
@@ -20,7 +20,6 @@ public class Main
     	System.out.println("Min: "+stack1.getMin());
     	System.out.println("Top: "+stack1.top());
     	
-//    	Checking New Branch dev
     	  	    	        
     }
 }

@@ -74,5 +74,12 @@ public class MinStack {
 			return min;
 		}
 	}
+	
+	public int size() {
+		return this.count;
+	}
 		
 }
+
+
+

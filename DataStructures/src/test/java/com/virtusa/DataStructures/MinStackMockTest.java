@@ -1,49 +1,76 @@
 package com.virtusa.DataStructures;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.when;
+
 import java.util.EmptyStackException;
 
 import org.junit.Test;
 
-public class MinStackTest 
+public class MinStackMockTest 
 {
-	
 	MinStack stack1;
+	
+	@Test
+	public void top_ReturnsMockElement_Test()
+	{    	
+		stack1 = mock(MinStack.class);
+		when(stack1.top()).thenReturn(200);
+		assertEquals(200, stack1.top());
+	}	
+	
+	@Test
+    public void pop_ReturnsMockElement_Test()
+    {    	
+    	stack1 = mock(MinStack.class);
+    	when(stack1.pop()).thenReturn(100);
+        assertEquals(100, stack1.pop());
+    }
+	
+	@Test
+	public void min_ReturnsMockElement_Test()
+	{    	
+		stack1 = mock(MinStack.class);
+		when(stack1.getMin()).thenReturn(5);
+		assertEquals(5, stack1.getMin());
+	}
 	
     @Test(expected = EmptyStackException.class)
     public void top_ThrowsAnException_StackIsEmpty()
     {    	
-    	stack1 = new MinStack();
+        stack1 = spy(MinStack.class);
         stack1.top();
     }
     
     @Test(expected = EmptyStackException.class)
     public void pop_ThrowsAnException_StackIsEmpty()
     {    	
-        stack1 = new MinStack();
+    	stack1 = spy(MinStack.class);
         stack1.pop();
     }
     
     @Test(expected = EmptyStackException.class)
     public void getMin_ThrowsException_IfStackIsEmpty()
     {    	
-        stack1 = new MinStack();
+    	stack1 = spy(MinStack.class);
         stack1.getMin();
     }
         
     @Test
     public void push_IncreaseSize_IfElementIsPushed() {
-    	stack1 = new MinStack();
-//    	assertEquals(0, stack1.size());
+    	stack1 = spy(MinStack.class);
+    	assertEquals(0, stack1.size());
     	stack1.push(10);
     	stack1.push(20);
     	assertEquals(2, stack1.size());
     }
-    
+          
     @Test
     public void top_ReturnsLastElement_StackContainsElement()
     {    	
-    	stack1 = new MinStack();
+    	stack1 = spy(MinStack.class);
         stack1.push(10);
         stack1.push(20);
         stack1.push(30);
@@ -55,21 +82,21 @@ public class MinStackTest
     @Test
     public void pop_ReturnsLastElement_StackContainsElement()
     {    	
-        stack1 = new MinStack();
+    	stack1 = spy(MinStack.class);
         stack1.push(10);
         stack1.push(20);
         stack1.push(30);
-        assertEquals(30, stack1.pop());
+        assertEquals(30, stack1.top());
     }
-    
+     
     @Test
     public void getMin_MinElement_StackContainsElements()
     {    	
-        stack1 = new MinStack();
+    	stack1 = spy(MinStack.class);
         stack1.push(10);
         stack1.push(20);
         stack1.push(30);
         assertEquals(10, stack1.getMin());
     }
-
+    
 }
